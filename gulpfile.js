@@ -10,6 +10,8 @@ const postcss = require("gulp-postcss");
 const zip = require("gulp-zip");
 const concat = require("gulp-concat");
 const uglify = require("gulp-uglify");
+const Fiber = require("fibers");
+const sass = require("gulp-sass");
 const beeper = require("beeper");
 const fs = require("fs");
 
@@ -23,6 +25,8 @@ const easyimport = require("postcss-easy-import");
 const REPO = "TryGhost/Casper";
 const REPO_READONLY = "TryGhost/Casper";
 const CHANGELOG_PATH = path.join(process.cwd(), ".", "changelog.md");
+
+sass.compiler = require("node-sass");
 
 function serve(done) {
     livereload.listen();
@@ -41,6 +45,28 @@ const handleError = (done) => {
 function hbs(done) {
     pump(
         [src(["*.hbs", "partials/**/*.hbs"]), livereload()],
+        handleError(done)
+    );
+}
+
+function scss(done) {
+    pump(
+        [
+            src("assets/css/*.scss", { sourcemaps: true }),
+            sass({
+                fiber: Fiber,
+                outputStyle: "compressed",
+            }).on("error", sass.logError),
+            postcss([
+                easyimport,
+                customProperties({ preserve: false }),
+                colorFunction(),
+                autoprefixer(),
+                cssnano(),
+            ]),
+            dest("assets/built/", { sourcemaps: "." }),
+            livereload(),
+        ],
         handleError(done)
     );
 }
@@ -102,10 +128,11 @@ function zipper(done) {
     );
 }
 
-const cssWatcher = () => watch("assets/css/**", css);
+const cssWatcher = () => watch("assets/css/*.css", css);
+const scssWatcher = () => watch("assets/css/*.scss", scss);
 const hbsWatcher = () => watch(["*.hbs", "partials/**/*.hbs"], hbs);
-const watcher = parallel(cssWatcher, hbsWatcher);
-const build = series(css, js);
+const watcher = parallel(scssWatcher, cssWatcher, hbsWatcher);
+const build = series(scss, css, js);
 
 exports.build = build;
 exports.zip = series(build, zipper);
