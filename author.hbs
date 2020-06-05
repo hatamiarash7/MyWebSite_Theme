@@ -23,19 +23,25 @@
                             <div class="author-location">{{location}}</div>
                         {{/if}}
                         <div class="author-stats">
-                            {{plural ../pagination.total empty='No posts' singular='% post' plural='% posts'}}
+                            {{plural ../pagination.total empty='No posts' singular='% پست' plural='% پست'}}
                         </div>
                         {{#if website}}
-                            <span class="author-social-link"><a href="{{website}}" target="_blank"
-                                    rel="noopener">Website</a></span>
+                            <span class="author-social-link">
+                                <a href="{{website}}" target="_blank" rel="noopener">وب سایت</a>
+                            </span>
                         {{/if}}
+                        <span class="author-social-link">
+                            <a href="https://github.com/hatamiarash7" target="_blank" rel="noopener">گیت هاب</a>
+                        </span>
                         {{#if twitter}}
-                            <span class="author-social-link"><a href="{{twitter_url}}" target="_blank"
-                                    rel="noopener">Twitter</a></span>
+                            <span class="author-social-link">
+                                <a href="{{twitter_url}}" target="_blank" rel="noopener">توییتر</a>
+                            </span>
                         {{/if}}
                         {{#if facebook}}
-                            <span class="author-social-link"><a href="{{facebook_url}}" target="_blank"
-                                    rel="noopener">Facebook</a></span>
+                            <span class="author-social-link">
+                                <a href="{{facebook_url}}" target="_blank" rel="noopener">فیسبوک</a>
+                            </span>
                         {{/if}}
                     </div>
                 </div>
