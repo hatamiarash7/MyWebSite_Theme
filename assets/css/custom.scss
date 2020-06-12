@@ -1,3 +1,6 @@
+$main-font: Vazir, sans-serif;
+$accent-color: #20c5ba;
+
 /* RTL */
 
 html,
@@ -7,15 +10,161 @@ body {
 
 /* custom styles */
 
+img {
+    opacity: 1 !important;
+}
+
+a {
+    transition: all 150ms linear;
+}
+
+.site-header-content {
+    .site-logo {
+        max-height: 100px;
+    }
+
+    .site-description {
+        margin-top: 20px;
+    }
+}
+
 .post-card-large {
     .post-card-content-link {
         padding: 0 40px 0 0;
     }
 }
 
-.post-card-large {
+.post-card {
+    .post-card-image {
+        border-radius: 10px;
+    }
+
+    .post-card-title {
+        direction: rtl;
+        font-size: 3rem;
+        font-family: $main-font;
+    }
+
+    .post-card-excerpt {
+        direction: rtl;
+        text-align: justify;
+        font-family: $main-font;
+
+        p {
+            font-size: 1.5rem;
+        }
+    }
+
     .post-card-meta {
         padding: 0 40px 0 0;
+    }
+
+    .post-card-byline-date {
+        direction: ltr;
+        text-align: right;
+    }
+}
+
+.post {
+    .post-full-header {
+        .post-full-title {
+            direction: rtl;
+            text-align: right;
+            font-family: $main-font;
+            color: white;
+        }
+
+        .post-card-title {
+            direction: rtl;
+            font-family: $main-font;
+        }
+    }
+
+    .post-full-custom-excerpt {
+        direction: rtl;
+        text-align: justify;
+        font-family: $main-font;
+        font-size: 2rem;
+    }
+
+    .author-name {
+        font-family: $main-font;
+    }
+
+    .post-content {
+        p {
+            color: white;
+            direction: rtl;
+            text-align: justify;
+            text-align-last: right;
+            font-family: $main-font;
+            font-size: 18px;
+            font-weight: 300;
+            letter-spacing: 0.41px;
+
+            a {
+                text-decoration: none !important;
+                transition: color 250ms;
+
+                &:hover {
+                    color: $accent-color;
+                }
+            }
+
+            strong {
+                font-weight: 500;
+                color: #91deda;
+            }
+        }
+
+        ul, ol {
+            font-family: $main-font;
+
+            li {
+                font-size: 16px;
+
+                &::marker {
+                    color: $accent-color;
+                }
+            }
+        }
+
+        pre {
+            direction: ltr !important;
+            border-radius: 10px;
+            background: #292d3e;
+            border: none;
+        }
+
+        h2, h3, h4 {
+            font-family: $main-font;
+            color: $accent-color;
+        }
+
+        figure {
+            img {
+                border-radius: 10px;
+            }
+        }
+
+        blockquote {
+            font-family: $main-font;
+            font-size: 16px;
+            color: #92a3ab;
+            border-right: 3px solid $accent-color;
+            border-left: 3px solid $accent-color;
+        }
+    }
+
+    .byline-meta-content {
+        direction: ltr;
+        text-align: right;
+    }
+}
+
+.copyright {
+    a {
+        font-family: $main-font;
     }
 }
 
@@ -30,7 +179,7 @@ body {
 }
 
 .author-social-link {
-    font-family: Vazir, sans-serif;
+    font-family: $main-font;
 
     a {
         font-weight: 300;
@@ -41,7 +190,31 @@ body {
 .nav {
     li {
         a {
-            font-family: Vazir, sans-serif;
+            font-family: $main-font;
+        }
+    }
+}
+
+.site-nav {
+    .site-nav-left {
+        margin-right: 25px;
+
+        .site-nav-logo {
+            margin-right: 0;
+            margin-left: 32px;
+        }
+
+        .nav-post-title {
+            direction: rtl;
+            font-family: $main-font;
+        }
+    }
+}
+
+.site-footer-nav {
+    a {
+        &:before {
+            top: 14px;
         }
     }
 }
@@ -51,5 +224,5 @@ body {
 .author-location,
 .author-stats,
 .site-title {
-    font-family: Vazir, sans-serif;
+    font-family: $main-font;
 }
