@@ -43,6 +43,7 @@ a {
         direction: rtl;
         font-size: 3rem;
         font-family: $main-font;
+        color: white;
     }
 
     .post-card-excerpt {
@@ -59,9 +60,19 @@ a {
         padding: 0 40px 0 0;
     }
 
-    .post-card-byline-date {
-        direction: ltr;
-        text-align: right;
+    .post-card-byline-content {
+        margin: 2px 6px 0 0;
+
+        span {
+            a {
+                font-family: $main-font;
+            }
+        }
+
+        .post-card-byline-date {
+            direction: ltr;
+            text-align: right;
+        }
     }
 }
 
@@ -211,18 +222,25 @@ a {
     }
 }
 
-.site-footer-nav {
-    a {
-        &:before {
-            top: 14px;
+.site-footer {
+    direction: ltr;
+
+    .site-footer-nav {
+        a {
+            &:before {
+                top: 14px;
+            }
         }
     }
 }
 
-/* font */
-
 .author-location,
 .author-stats,
 .site-title {
+    font-family: $main-font;
+}
+
+.error-link {
+    direction: ltr;
     font-family: $main-font;
 }
