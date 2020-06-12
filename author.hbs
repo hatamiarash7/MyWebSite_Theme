@@ -1,7 +1,7 @@
 {{!< default}}
 {{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
 {{#author}}
-    {{!-- Everything inside the #author tags pulls data from the author --}}
+{{!-- Everything inside the #author tags pulls data from the author --}}
     <header class='site-archive-header'>
         {{> site-header}}
         {{> header-background background=cover_image}}
@@ -9,7 +9,7 @@
         <div class="inner">
             <div class="site-header-content author-header">
                 {{#if profile_image}}
-                    <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}" />
+                    <img class="author-profile-image" src="{{profile_image}}" alt="{{name}}"/>
                 {{else}}
                     <span class="author-profile-image">{{> "icons/avatar"}}</span>
                 {{/if}}
@@ -55,7 +55,7 @@
     <div class="inner posts">
         <div class="post-feed">
             {{#foreach posts}}
-                {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
                 {{> "post-card"}}
             {{/foreach}}
         </div>
