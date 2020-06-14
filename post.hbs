@@ -87,11 +87,10 @@ into the {body} of the default.hbs template --}}
                 {{#if @labs.members}}
                     {{> subscribe-form}}
                 {{/if}}
-                {{!--
-            <section class="post-full-comments">
-                If you want to embed comments, this is a good place to do it!
-            </section>
-            --}}
+                <section class="post-full-comments">
+                    <hr />
+                    <section id="isso-thread"></section>
+                </section>
             </article>
         </div>
     </main>
