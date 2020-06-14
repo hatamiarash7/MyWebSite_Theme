@@ -116,6 +116,15 @@ a {
         }
     }
 
+    .post-card-image {
+        opacity: 0.9 !important;
+        transition: opacity 200ms linear;
+
+        &:hover {
+            opacity: 1 !important;
+        }
+    }
+
     .post-full-custom-excerpt {
         direction: rtl;
         text-align: justify;
