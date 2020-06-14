@@ -99,6 +99,7 @@ $btn-color: #999;
             & > div.text-wrapper > .isso-comment-footer > a {
                 padding-left: 0;
                 transition: 0.1s linear all;
+                font-weight: 500;
 
                 &:hover {
                     color: $color-primary-darkest !important;
@@ -113,6 +114,7 @@ $btn-color: #999;
 
         p {
             font-size: 14px;
+            font-weight: 300;
         }
     }
 }
