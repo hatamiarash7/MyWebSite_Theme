@@ -89,6 +89,30 @@ a {
             direction: rtl;
             font-family: $main-font;
         }
+
+        .post-full-byline {
+            margin: 20px 0 0;
+        }
+
+        .tag-list {
+            margin-top: 15px;
+
+            a {
+                background: #2d3951;
+                padding: 3px 6px 0px 6px;
+                border-radius: 5px;
+                color: white;
+                font-family: $main-font;
+                font-size: 14px;
+                text-decoration: none;
+                transition: all 250ms;
+
+                &:hover {
+                    text-decoration: none;
+                    color: #20c5ba;
+                }
+            }
+        }
     }
 
     .post-full-custom-excerpt {
@@ -128,7 +152,8 @@ a {
             }
         }
 
-        ul, ol {
+        ul,
+        ol {
             font-family: $main-font;
 
             li {
@@ -147,7 +172,9 @@ a {
             border: none;
         }
 
-        h2, h3, h4 {
+        h2,
+        h3,
+        h4 {
             font-family: $main-font;
             color: $accent-color;
         }
