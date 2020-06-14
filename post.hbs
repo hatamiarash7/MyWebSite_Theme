@@ -104,7 +104,7 @@ into the {body} of the default.hbs template --}}
                             <article class="read-next-card">
                                 <header class="read-next-card-header">
                                     {{#../primary_tag}}
-                                        <h3><span>More in</span> <a href="{{url}}">{{name}}</a></h3>
+                                        <h3><span>نوشته های دیگر </span> <a href="{{url}}">{{name}}</a></h3>
                                     {{/../primary_tag}}
                                 </header>
                                 <div class="read-next-card-content">
@@ -123,8 +123,8 @@ into the {body} of the default.hbs template --}}
                                     </ul>
                                 </div>
                                 <footer class="read-next-card-footer">
-                                    <a href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='See all % posts'}}
-                                        →</a>
+                                    <a
+                                        href="{{#../primary_tag}}{{url}}{{/../primary_tag}}">{{plural meta.pagination.total empty='No posts' singular='% post' plural='مشاهده همه پست ها'}}</a>
                                 </footer>
                             </article>
                         {{/if}}
