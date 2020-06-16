@@ -193,6 +193,10 @@ a {
             img {
                 border-radius: 10px;
             }
+
+            .kg-bookmark-container {
+                direction: ltr;
+            }
         }
 
         blockquote {
@@ -201,6 +205,15 @@ a {
             color: #92a3ab;
             border-right: 3px solid $accent-color;
             border-left: 3px solid $accent-color;
+        }
+
+        img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+
+        video {
+            max-width: 100%;
         }
     }
 
