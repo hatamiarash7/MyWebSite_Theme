@@ -120,6 +120,7 @@ function zipper(done) {
                 "!node_modules/**",
                 "!dist",
                 "!dist/**",
+                "!yarn-error.log",
             ]),
             zip(filename),
             dest("dist/"),
