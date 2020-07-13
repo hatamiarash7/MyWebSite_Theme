@@ -29,6 +29,18 @@ into the {body} of the default.hbs template --}}
                                             {{else}}
                                                 <div class="author-profile-image">{{> "icons/avatar"}}</div>
                                             {{/if}}
+                                            <div class="author-info">
+                                                {{#if bio}}
+                                                    <div class="bio">
+                                                        <h2>{{name}}</h2>
+                                                        <p>{{bio}}</p>
+                                                        <p><a href="{{url}}">پست های بیشتر</a> از {{name}}</p>
+                                                    </div>
+                                                {{else}}
+                                                    <h2>{{name}}</h2>
+                                                    <p><a href="{{url}}">پست های بیشتر </a> از این نویسنده</p>
+                                                {{/if}}
+                                            </div>
                                         </div>
                                         {{#if profile_image}}
                                             <a href="{{url}}" class="author-avatar">
