@@ -209,6 +209,11 @@ a {
 
             .kg-bookmark-container {
                 direction: ltr;
+                border-radius: 10px;
+
+                .kg-bookmark-title {
+                    direction: rtl;
+                }
             }
         }
 
