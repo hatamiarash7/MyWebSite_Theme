@@ -205,14 +205,18 @@ a {
         figure {
             img {
                 border-radius: 10px;
+                border-top-left-radius: 0;
+                border-bottom-left-radius: 0;
             }
 
             .kg-bookmark-container {
                 direction: ltr;
                 border-radius: 10px;
 
-                .kg-bookmark-title {
+                .kg-bookmark-title,
+                .kg-bookmark-description {
                     direction: rtl;
+                    font-family: $main-font;
                 }
             }
         }
