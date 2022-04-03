@@ -8,46 +8,18 @@ on:
             - "assets/js/**"
             - ".github/workflows/formatter.yml"
 
-env:
-    REF: ""
-
 jobs:
     Prettier:
         runs-on: ubuntu-latest
-        strategy:
-            max-parallel: 1
-            fail-fast: false
-            matrix:
-                include:
-                    - language: CSS
-                      path: "assets/css/"
-                      extension: "css"
-                    - language: Sass
-                      path: "assets/css/"
-                      extension: "scss"
-                    - language: Javascript
-                      path: "assets/js/"
-                      extension: "js"
-                    - language: JSON
-                      path: ""
-                      extension: "json"
 
         steps:
             - name: Checkout project
               uses: actions/checkout@v3
-              with:
-                  ref: ${{ env.REF }}
 
             - name: Format ${{ matrix.language }} files
               uses: creyD/prettier_action@v4.2
               with:
-                  prettier_options: --write ${{ matrix.path }}**/*.${{ matrix.extension }}
+                  prettier_options: --write "assets/css/*.{json,css,scss}" "assets/js/**/*.js"
                   same_commit: false
                   commit_message: "[CI] Format Code!"
                   commit_description: "Format code using Prettier"
-
-            - name: Set REF
-              run: |
-                  git rev-parse HEAD
-                  echo "REF=$(git rev-parse HEAD)" >> $GITHUB_ENV
-                  echo ${{ env.REF }}
