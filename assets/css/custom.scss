@@ -141,6 +141,10 @@ a {
         font-size: 2rem;
     }
 
+    .post-full-byline-meta {
+        margin: 2px 5px 0;
+    }
+
     .author-name {
         font-family: $main-font;
     }
@@ -172,6 +176,7 @@ a {
 
             code {
                 word-break: break-word;
+                padding: 3px 5px 3px 5px;
             }
         }
 
@@ -205,8 +210,6 @@ a {
         figure {
             img {
                 border-radius: 10px;
-                border-top-left-radius: 0;
-                border-bottom-left-radius: 0;
             }
 
             .kg-bookmark-container {
