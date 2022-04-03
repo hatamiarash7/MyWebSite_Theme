@@ -8,6 +8,9 @@ on:
             - "assets/js/**"
             - ".github/workflows/formatter.yml"
 
+env:
+    REF: ${{ github.head_ref }}
+
 jobs:
     Prettier:
         runs-on: ubuntu-latest
@@ -32,6 +35,8 @@ jobs:
         steps:
             - name: Checkout project
               uses: actions/checkout@v3
+              with:
+                  ref: ${{ env.REF }}
 
             - name: Format ${{ matrix.language }} files
               uses: creyD/prettier_action@v4.2
@@ -40,3 +45,6 @@ jobs:
                   same_commit: false
                   commit_message: "[CI] Format Code!"
                   commit_description: "Format code using Prettier"
+
+            - name: Set REF
+              run: echo "REF=$(git log -1 --format='%H')" >> $GITHUB_ENV
