@@ -48,5 +48,6 @@ jobs:
 
             - name: Set REF
               run: |
-                  git log -1 --format='%H'
-                  echo "REF=$(git log -1 --format='%H')" >> $GITHUB_ENV
+                  git rev-parse HEAD
+                  echo "REF=$(git rev-parse HEAD)" >> $GITHUB_ENV
+                  echo ${{ env.REF }}
