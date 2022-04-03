@@ -35,7 +35,7 @@ jobs:
                   ref: ${{ github.head_ref }}
                   fetch-depth: 0
 
-            - name: Format ${{ matrix.language }} codes
+            - name: Format ${{ matrix.language }} files
               uses: creyD/prettier_action@v4.2
               with:
                   prettier_options: --write ${{ matrix.path }}**/*.${{ matrix.extension }}
