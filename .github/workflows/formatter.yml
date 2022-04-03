@@ -16,13 +16,13 @@ jobs:
             matrix:
                 include:
                     - language: CSS
-                      path: "css"
+                      path: "assets/css/"
                       extension: "css"
                     - language: Sass
-                      path: "css"
+                      path: "assets/css/"
                       extension: "scss"
                     - language: Javascript
-                      path: "js"
+                      path: "assets/js/"
                       extension: "js"
 
         steps:
@@ -35,7 +35,7 @@ jobs:
             - name: Format ${{ matrix.language }} codes
               uses: creyD/prettier_action@v4.2
               with:
-                  prettier_options: --write assets/${{ matrix.path }}/**/*.${{ matrix.extension }}
+                  prettier_options: --write ${{ matrix.path }}**/*.${{ matrix.extension }}
                   same_commit: false
                   commit_message: "[CI] Format Code!"
                   commit_description: "Format code using Prettier"
