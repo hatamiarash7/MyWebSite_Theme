@@ -9,7 +9,7 @@ on:
             - ".github/workflows/formatter.yml"
 
 jobs:
-    prettier:
+    Prettier:
         runs-on: ubuntu-latest
         strategy:
             max-parallel: 1
