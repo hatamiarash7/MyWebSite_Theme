@@ -24,6 +24,9 @@ jobs:
                     - language: Javascript
                       path: "assets/js/"
                       extension: "js"
+                    - language: JSON
+                      path: ""
+                      extension: "json"
 
         steps:
             - name: Checkout project
