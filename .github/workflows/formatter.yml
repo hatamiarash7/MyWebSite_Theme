@@ -19,7 +19,7 @@ jobs:
             - name: Format ${{ matrix.language }} files
               uses: creyD/prettier_action@v4.2
               with:
-                  prettier_options: --write assets/css/*.{json,css,scss} assets/js/**/*.js
+                  prettier_options: --write assets/css/*.{css,scss} assets/js/**/*.js **/*.json
                   same_commit: false
                   commit_message: "[CI] Format Code!"
                   commit_description: "Format code using Prettier"
