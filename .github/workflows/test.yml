@@ -1,0 +1,25 @@
+name: Test
+
+on:
+    push:
+        branches: [master]
+
+jobs:
+    build:
+        name: Test
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout project
+              uses: actions/checkout@v3
+
+            - uses: borales/actions-yarn@v2.3.0
+              with:
+                  cmd: "install"
+
+            - uses: borales/actions-yarn@v2.3.0
+              with:
+                  cmd: "pretest"
+
+            - uses: borales/actions-yarn@v2.3.0
+              with:
+                  cmd: "test:ci"
