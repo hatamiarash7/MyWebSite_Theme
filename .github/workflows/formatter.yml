@@ -1,6 +1,12 @@
 name: Formatter
 
-on: [push]
+on:
+    push:
+        branches: [master]
+        paths:
+            - "assets/css/**"
+            - "assets/js/**"
+            - ".github/workflows/formatter.yml"
 
 jobs:
     prettier:
