@@ -9,7 +9,7 @@ on:
             - ".github/workflows/formatter.yml"
 
 env:
-    REF: ${{ github.head_ref }}
+    REF: ""
 
 jobs:
     Prettier:
@@ -47,4 +47,6 @@ jobs:
                   commit_description: "Format code using Prettier"
 
             - name: Set REF
-              run: echo "REF=$(git log -1 --format='%H')" >> $GITHUB_ENV
+              run: |
+                  git log -1 --format='%H'
+                  echo "REF=$(git log -1 --format='%H')" >> $GITHUB_ENV
