@@ -12,6 +12,7 @@ jobs:
     prettier:
         runs-on: ubuntu-latest
         strategy:
+            max-parallel: 1
             fail-fast: false
             matrix:
                 include:
