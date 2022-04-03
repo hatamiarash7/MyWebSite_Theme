@@ -32,9 +32,6 @@ jobs:
         steps:
             - name: Checkout project
               uses: actions/checkout@v3
-              with:
-                  ref: ${{ github.head_ref }}
-                  fetch-depth: 0
 
             - name: Format ${{ matrix.language }} files
               uses: creyD/prettier_action@v4.2
