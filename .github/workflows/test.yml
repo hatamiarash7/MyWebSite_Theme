@@ -8,9 +8,6 @@ jobs:
     build:
         name: Test
         runs-on: ubuntu-latest
-        strategy:
-            matrix:
-                node: ["10", "12"]
 
         steps:
             - name: Checkout project
@@ -19,7 +16,7 @@ jobs:
             - name: Install NodeJS
               uses: actions/setup-node@v3
               with:
-                  node-version: ${{ matrix.node }}
+                  node-version: 12
 
             - name: Install dependencies
               run: yarn install
