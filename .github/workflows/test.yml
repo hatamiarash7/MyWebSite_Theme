@@ -1,4 +1,4 @@
-name: Test
+name: ✅ Tests
 
 on:
     push:
@@ -10,19 +10,19 @@ jobs:
         runs-on: ubuntu-latest
 
         steps:
-            - name: Checkout project
+            - name: ⬇️ Checkout project
               uses: actions/checkout@v3
 
-            - name: Install NodeJS
+            - name: 📥 Install NodeJS
               uses: actions/setup-node@v3
               with:
                   node-version: 12
 
-            - name: Install dependencies
+            - name: 📥 Install dependencies
               run: yarn install
 
-            - name: Pre-Test
+            - name: 🔎 Pre-Test
               run: yarn pretest
 
-            - name: Test
+            - name: 🔎 Test
               run: yarn test:ci
