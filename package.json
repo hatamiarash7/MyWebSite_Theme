@@ -57,7 +57,7 @@
         "postcss-custom-properties": "9.2.0",
         "postcss-easy-import": "3.0.0",
         "pump": "3.0.0",
-        "fibers": "5.0.0"
+        "fibers": "5.0.1"
     },
     "browserslist": [
         "defaults"
