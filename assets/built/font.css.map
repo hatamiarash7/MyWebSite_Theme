@@ -1,1 +1,1 @@
-{"version":3,"sources":["font.css"],"names":[],"mappings":"AAAA,OACI,sCACJ,CAEA,KACI,uBACJ","file":"font.css","sourcesContent":[".vazir {\n    font-family: Vazirmatn RD FD, sans-serif;\n}\n\n.rtl {\n    direction: rtl !important;\n}\n"]}
+{"version":3,"sources":["font.css"],"names":[],"mappings":"AAAA,OACI,yCACJ,CAEA,KACI,uBACJ","file":"font.css","sourcesContent":[".vazir {\n    font-family: Vazirmatn RD UI FD, sans-serif;\n}\n\n.rtl {\n    direction: rtl !important;\n}\n"]}
