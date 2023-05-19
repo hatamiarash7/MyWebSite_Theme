@@ -16,7 +16,7 @@ jobs:
             - name: 📥 Install NodeJS
               uses: actions/setup-node@v3
               with:
-                  node-version: 12
+                  node-version: 18
 
             - name: 📥 Install dependencies
               run: yarn install
