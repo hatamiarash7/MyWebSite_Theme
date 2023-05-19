@@ -7,6 +7,9 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/font.css"}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset "built/custom.css"}}" />
+    <link href="https://cdn.jsdelivr.net/npm/vazirmatn@33.0.3/Round-Dots/misc/UI-Farsi-Digits/Vazirmatn-RD-UI-FD-font-face.css" rel="stylesheet" type="text/css" />
     {{ghost_head}}
 </head>
 <body class="{{body_class}} is-head-{{#match @custom.navigation_layout "Logo on cover"}}left-logo{{else match @custom.navigation_layout "Logo in the middle"}}middle-logo{{else}}stacked{{/match}}{{#match @custom.title_font "=" "Elegant serif"}} has-serif-title{{/match}}{{#match @custom.body_font "=" "Modern sans-serif"}} has-sans-body{{/match}}{{#if @custom.show_publication_cover}} has-cover{{/if}}">
