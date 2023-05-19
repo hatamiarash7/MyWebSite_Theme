@@ -56,6 +56,7 @@ production stylesheet in assets/built/screen.css
         "Helvetica Neue", sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
+    --font-rtl: Vazirmatn RD UI FD, sans-serif;
 }
 
 /* 2. Layout - Page building blocks
