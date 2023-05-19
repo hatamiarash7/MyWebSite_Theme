@@ -25,7 +25,7 @@ a {
 
     .post-card-title {
         direction: rtl;
-        font-size: 3rem;
+        font-size: 2.5rem;
         font-family: $main-font;
         color: white;
     }
@@ -64,6 +64,7 @@ a {
         .article-title {
             direction: rtl;
             font-family: $main-font;
+            font-size: clamp(3rem, 5vw, 5rem);
         }
 
         .article-excerpt {
@@ -86,100 +87,100 @@ a {
             border-radius: 50px;
         }
     }
+}
 
-    .gh-content {
-        p {
-            color: white;
-            direction: rtl;
-            text-align: justify;
-            text-align-last: right;
-            font-family: $main-font;
-            font-size: 2rem;
-            font-weight: 300;
-            letter-spacing: 0.41px;
+.gh-content {
+    p {
+        color: white;
+        direction: rtl;
+        text-align: justify;
+        text-align-last: right;
+        font-family: $main-font;
+        font-size: 2rem;
+        font-weight: 300;
+        letter-spacing: 0.41px;
 
-            a {
-                text-decoration: none !important;
-                transition: color 250ms;
+        a {
+            text-decoration: none !important;
+            transition: color 250ms;
 
-                &:hover {
-                    color: $accent-color;
-                }
-            }
-
-            strong {
-                font-weight: 500;
-                color: #91deda;
-            }
-
-            code {
-                word-break: break-word;
-                padding: 3px 5px 3px 5px;
-                unicode-bidi: plaintext;
+            &:hover {
+                color: $accent-color;
             }
         }
 
-        ul,
-        ol {
-            font-family: $main-font;
-
-            li {
-                font-size: 16px;
-
-                &::marker {
-                    color: $accent-color;
-                }
-            }
+        strong {
+            font-weight: 500;
+            color: #91deda;
         }
 
-        pre {
-            direction: ltr !important;
-            border-radius: 10px;
-            background: #292d3e;
-            border: none;
+        code {
+            word-break: break-word;
+            padding: 3px 5px 3px 5px;
+            unicode-bidi: plaintext;
         }
+    }
 
-        h2,
-        h3,
-        h4 {
-            font-family: $main-font;
-            color: $accent-color;
-        }
+    ul,
+    ol {
+        font-family: $main-font;
 
-        figure {
-            img {
-                border-radius: 10px;
-            }
-
-            .kg-bookmark-container {
-                direction: ltr;
-                border-radius: 10px;
-
-                .kg-bookmark-title,
-                .kg-bookmark-description {
-                    direction: rtl;
-                    font-family: $main-font;
-                }
-            }
-        }
-
-        blockquote {
-            font-family: $main-font;
+        li {
             font-size: 16px;
-            color: #92a3ab;
-            border-right: 3px solid $accent-color;
-            border-left: 3px solid $accent-color;
-            padding: 0 10px;
-        }
 
+            &::marker {
+                color: $accent-color;
+            }
+        }
+    }
+
+    pre {
+        direction: ltr !important;
+        border-radius: 10px;
+        background: #292d3e;
+        border: none;
+    }
+
+    h2,
+    h3,
+    h4 {
+        font-family: $main-font;
+        color: $accent-color !important;
+    }
+
+    figure {
         img {
-            max-width: 100%;
             border-radius: 10px;
         }
 
-        video {
-            max-width: 100%;
+        .kg-bookmark-container {
+            direction: ltr;
+            border-radius: 10px;
+
+            .kg-bookmark-title,
+            .kg-bookmark-description {
+                direction: rtl;
+                font-family: $main-font;
+            }
         }
+    }
+
+    blockquote {
+        font-family: $main-font;
+        font-size: 16px;
+        color: #92a3ab;
+        border-right: 3px solid $accent-color;
+        border-left: 3px solid $accent-color;
+        padding: 0 10px;
+    }
+
+    img {
+        max-width: 100%;
+        border-radius: 10px;
+    }
+
+    video {
+        max-width: 100%;
     }
 }
 
