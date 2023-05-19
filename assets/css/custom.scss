@@ -82,7 +82,7 @@ a {
             }
         }
 
-        .gh-canvas .article-image img {
+        .article-image img {
             border-radius: 50px;
         }
     }
@@ -199,6 +199,14 @@ a {
 .gh-head-brand .gh-search {
     margin-right: 0;
     margin-left: 8px;
+}
+
+.has-cover .site-header-content {
+    min-height: 506px;
+}
+
+.site-header-cover {
+    opacity: 0.75 !important;
 }
 
 @media (max-width: 767px) {
