@@ -12,6 +12,7 @@ const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const beeper = require('beeper');
 const fs = require('fs');
+const sass = require('gulp-sass')(require('sass'));
 
 // postcss plugins
 const autoprefixer = require('autoprefixer');
@@ -19,8 +20,8 @@ const colorFunction = require('postcss-color-mod-function');
 const cssnano = require('cssnano');
 const easyimport = require('postcss-easy-import');
 
-const REPO = 'TryGhost/Casper';
-const REPO_READONLY = 'TryGhost/Casper';
+const REPO = 'hatamiarash7/MyWebSite_Theme';
+const REPO_READONLY = 'hatamiarash7/MyWebSite_Theme';
 const CHANGELOG_PATH = path.join(process.cwd(), '.', 'changelog.md');
 
 function serve(done) {
@@ -42,6 +43,26 @@ function hbs(done) {
         src(['*.hbs', 'partials/**/*.hbs']),
         livereload()
     ], handleError(done));
+}
+
+function scss(done) {
+    pump(
+        [
+            src("assets/css/*.scss", { sourcemaps: true }),
+            sass({
+                outputStyle: "compressed",
+            }).on("error", sass.logError),
+            postcss([
+                easyimport,
+                colorFunction(),
+                autoprefixer(),
+                cssnano(),
+            ]),
+            dest("assets/built/", { sourcemaps: "." }),
+            livereload(),
+        ],
+        handleError(done)
+    );
 }
 
 function css(done) {
@@ -90,10 +111,11 @@ function zipper(done) {
 }
 
 const cssWatcher = () => watch('assets/css/**', css);
+const scssWatcher = () => watch("assets/css/*.scss", scss);
 const jsWatcher = () => watch('assets/js/**', js);
 const hbsWatcher = () => watch(['*.hbs', 'partials/**/*.hbs'], hbs);
-const watcher = parallel(cssWatcher, jsWatcher, hbsWatcher);
-const build = series(css, js);
+const watcher = parallel(scssWatcher, cssWatcher, jsWatcher, hbsWatcher);
+const build = series(scss, css, js);
 
 exports.build = build;
 exports.zip = series(build, zipper);

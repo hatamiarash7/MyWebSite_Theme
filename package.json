@@ -168,5 +168,9 @@
         "extends": [
             "@tryghost:theme"
         ]
+    },
+    "dependencies": {
+        "gulp-sass": "^5.1.0",
+        "sass": "^1.62.1"
     }
 }
