@@ -95,6 +95,16 @@ a {
             padding: 3px 6px 0px 6px;
             font-family: $main-font;
         }
+
+        .post-card-featured {
+            padding-left: 0;
+            padding-right: 18px;
+
+            svg {
+                left: unset !important;
+                right: 0;
+            }
+        }
     }
 }
 
