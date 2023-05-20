@@ -29,12 +29,12 @@
         <a class="post-card-content-link" href="{{url}}">
             <header class="post-card-header">
                 <div class="post-card-tags">
-                    {{#primary_tag}}
-                        <span class="post-card-primary-tag">{{name}}</span>
-                    {{/primary_tag}}
                     {{#if featured}}
                         <span class="post-card-featured">{{> "icons/fire"}} ویژه</span>
                     {{/if}}
+                    {{#primary_tag}}
+                        <span class="post-card-primary-tag">{{name}}</span>
+                    {{/primary_tag}}
                 </div>
                 <h2 class="post-card-title">
                     {{#unless access}}
