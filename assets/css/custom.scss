@@ -87,6 +87,15 @@ a {
             border-radius: 50px;
         }
     }
+
+    .article-tag {
+        margin-bottom: 20px;
+
+        a {
+            padding: 3px 6px 0px 6px;
+            font-family: $main-font;
+        }
+    }
 }
 
 .gh-content {
