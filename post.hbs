@@ -63,11 +63,10 @@
     <section class="gh-content gh-canvas">
         {{content}}
     </section>
-    {{#if comments}}
-        <section class="article-comments gh-canvas">
-            {{comments}}
-        </section>
-    {{/if}}
+    <section class="post-full-comments">
+        <hr />
+        <section id="nikas-thread" data-title="{{title}}" data-nikas-id="{{url}}"></section>
+    </section>
 </article>
 </main>
 {{#if @site.members_enabled}}
