@@ -231,52 +231,52 @@ a {
 // KG
 
 .kg-bookmark-container {
-    border-radius: 15px;
+    border-radius: 15px !important;
 
     img {
-        border-radius: 0 15px 15px 0;
+        border-radius: 0 15px 15px 0 !important;
     }
 }
 
 .kg-button-card {
     a {
-        background-color: #20c5ba;
-        border-radius: 10px;
+        background-color: #20c5ba !important;
+        border-radius: 10px !important;
     }
 }
 
 .kg-callout-card {
-    border-radius: 15px;
+    border-radius: 15px !important;
 
     div.kg-callout-emoji {
-        padding-right: 0;
-        padding-left: 0.8em;
+        padding-right: 0 !important;
+        padding-left: 0.8em !important;
     }
 
     .kg-callout-text {
-        font-family: $main-font;
+        font-family: $main-font !important;
     }
 }
 
 .kg-toggle-card {
-    border-radius: 15px;
+    border-radius: 15px !important;
 
     p {
-        font-family: $main-font;
+        font-family: $main-font !important;
     }
 }
 
 .kg-product-card-container {
-    border-radius: 15px;
+    border-radius: 15px !important;
 
     img {
-        border-radius: 15px;
+        border-radius: 15px !important;
     }
 
     .kg-product-card-button {
         a {
-            background-color: #20c5ba;
-            border-radius: 10px;
+            background-color: #20c5ba !important;
+            border-radius: 10px !important;
         }
     }
 }
