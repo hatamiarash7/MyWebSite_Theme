@@ -274,10 +274,13 @@ a {
     }
 
     .kg-product-card-button {
-        a {
-            background-color: #20c5ba !important;
-            border-radius: 10px !important;
-        }
+        background-color: #20c5ba !important;
+        border-radius: 10px !important;
+    }
+
+    h4.kg-product-card-title,
+    .kg-product-card-description p {
+        font-family: $main-font !important;
     }
 }
 
