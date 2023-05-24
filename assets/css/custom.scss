@@ -104,7 +104,7 @@ a {
     }
 
     .post-full-comments {
-        margin-top: 50px;
+        margin: 2em 3em 0 3em;
     }
 }
 
@@ -281,9 +281,24 @@ a {
     }
 }
 
+.yektanet {
+    margin: 2em 3em 0 3em;
+}
+
 @media (max-width: 767px) {
     #gh-head .gh-head-brand .gh-search {
         margin-left: 0;
         margin-right: -6px;
+    }
+
+    .yektanet,
+    .post-full-comments {
+        margin: 1em 2em 0 2em;
+    }
+}
+
+@media (max-width: 767px) {
+    .nikas-comment > .nikas-avatar {
+        margin: 3px 0 0 27px;
     }
 }
