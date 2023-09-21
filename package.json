@@ -39,7 +39,7 @@
     "bugs": "https://github.com/hatamiarash7/MyWebSite_Theme/issues",
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
-        "autoprefixer": "10.4.15",
+        "autoprefixer": "10.4.16",
         "beeper": "2.1.0",
         "cssnano": "6.0.1",
         "gscan": "4.38.0",
