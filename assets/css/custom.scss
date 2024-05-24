@@ -1,6 +1,4 @@
-$main-font:
-    Vazirmatn RD UI FD,
-    sans-serif;
+$main-font: Vazirmatn RD UI FD, sans-serif;
 $accent-color: #20c5ba;
 
 html,
@@ -98,6 +96,7 @@ a {
             padding-left: 0;
             padding-right: 18px;
             font-family: $main-font;
+            word-break: keep-all;
 
             svg {
                 left: unset !important;
