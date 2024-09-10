@@ -53,7 +53,7 @@
         "postcss": "8.4.41",
         "postcss-color-mod-function": "3.0.3",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.0"
+        "pump": "3.0.1"
     },
     "browserslist": [
         "defaults"
