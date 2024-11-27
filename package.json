@@ -170,7 +170,7 @@
         ]
     },
     "dependencies": {
-        "gulp-sass": "^5.1.0",
+        "gulp-sass": "^6.0.0",
         "sass": "^1.62.1"
     }
 }
