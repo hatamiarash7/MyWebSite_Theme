@@ -41,15 +41,12 @@ a {
     .post-card-meta {
         direction: ltr;
         align-self: flex-start;
+        color: var(--color-secondary-text) !important;
     }
 
     .post-card-primary-tag {
-        color: var(--color-secondary-text);
+        color: var(--color-secondary-text) !important;
         font-family: $main-font !important;
-    }
-
-    .post-card-meta {
-        color: #fff;
     }
 }
 
