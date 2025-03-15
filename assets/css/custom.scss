@@ -1,6 +1,4 @@
-$main-font:
-    Vazirmatn RD UI FD,
-    sans-serif;
+$main-font: Vazirmatn RD UI FD, sans-serif;
 $accent-color: #20c5ba;
 
 html,
@@ -24,14 +22,14 @@ a {
     .post-card-title {
         direction: rtl;
         font-size: 2.5rem;
-        font-family: $main-font;
+        font-family: $main-font !important;
         color: white;
     }
 
     .post-card-excerpt {
         direction: rtl;
         text-align: justify;
-        font-family: $main-font;
+        font-family: $main-font !important;
 
         p {
             font-size: 1.5rem;
@@ -41,6 +39,15 @@ a {
     .post-card-meta {
         direction: ltr;
         align-self: flex-start;
+    }
+
+    .post-card-primary-tag {
+        color: var(--color-secondary-text);
+        font-family: $main-font !important;
+    }
+
+    .post-card-meta {
+        color: #fff;
     }
 }
 
@@ -55,19 +62,19 @@ a {
     }
 
     .author-name {
-        font-family: $main-font;
+        font-family: $main-font !important;
     }
 
     .article-header {
         .article-title {
             direction: rtl;
-            font-family: $main-font;
+            font-family: $main-font !important;
             font-size: clamp(3rem, 5vw, 5rem);
         }
 
         .article-excerpt {
             direction: rtl;
-            font-family: $main-font;
+            font-family: $main-font !important;
         }
 
         .article-byline {
@@ -77,6 +84,7 @@ a {
                 }
                 .byline-meta-content {
                     margin: 6px 6px 0 0;
+                    color: var(--color-secondary-text);
                 }
             }
         }
@@ -91,13 +99,14 @@ a {
 
         a {
             padding: 3px 6px 0px 6px;
-            font-family: $main-font;
+            font-family: $main-font !important;
+            color: var(--color-secondary-text);
         }
 
         .post-card-featured {
             padding-left: 0;
             padding-right: 18px;
-            font-family: $main-font;
+            font-family: $main-font !important;
             word-break: keep-all;
 
             svg {
@@ -118,7 +127,7 @@ a {
         direction: rtl;
         text-align: justify;
         text-align-last: right;
-        font-family: $main-font;
+        font-family: $main-font !important;
         font-size: 2rem;
         font-weight: 300;
 
@@ -145,7 +154,7 @@ a {
 
     ul,
     ol {
-        font-family: $main-font;
+        font-family: $main-font !important;
 
         li {
             font-size: 16px;
@@ -166,7 +175,7 @@ a {
     h2,
     h3,
     h4 {
-        font-family: $main-font;
+        font-family: $main-font !important;
         color: $accent-color !important;
     }
 
@@ -182,13 +191,13 @@ a {
             .kg-bookmark-title,
             .kg-bookmark-description {
                 direction: rtl;
-                font-family: $main-font;
+                font-family: $main-font !important;
             }
         }
     }
 
     blockquote {
-        font-family: $main-font;
+        font-family: $main-font !important;
         font-size: 16px;
         color: #92a3ab;
         border-right: 3px solid $accent-color;
@@ -209,7 +218,7 @@ a {
 .nav {
     li {
         a {
-            font-family: $main-font;
+            font-family: $main-font !important;
         }
     }
 }
