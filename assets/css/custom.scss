@@ -100,7 +100,11 @@ a {
         a {
             padding: 3px 6px 0px 6px;
             font-family: $main-font !important;
-            color: var(--color-secondary-text);
+            color: var(--color-secondary-text) !important;
+        }
+
+        .tag-list {
+            color: var(--color-secondary-text) !important;
         }
 
         .post-card-featured {
@@ -198,11 +202,11 @@ a {
 
     blockquote {
         font-family: $main-font !important;
-        font-size: 16px;
+        font-size: 16px !important;
         color: #92a3ab;
         border-right: 3px solid $accent-color;
         border-left: 3px solid $accent-color;
-        padding: 0 10px;
+        padding: 0 10px !important;
     }
 
     img {
