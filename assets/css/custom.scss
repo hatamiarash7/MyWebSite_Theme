@@ -49,6 +49,13 @@ a {
         color: var(--color-secondary-text) !important;
         font-family: $main-font !important;
     }
+
+    .author-profile-footer {
+        .author-profile-location {
+            font-family: $main-font !important;
+            color: var(--color-secondary-text) !important;
+        }
+    }
 }
 
 .post {
