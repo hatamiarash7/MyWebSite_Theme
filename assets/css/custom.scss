@@ -2,6 +2,7 @@ $main-font:
     Vazirmatn RD UI FD,
     sans-serif;
 $accent-color: #20c5ba;
+$accent-color-dark: #00726a;
 
 html,
 body {
@@ -137,9 +138,10 @@ a {
         a {
             text-decoration: none !important;
             transition: color 250ms;
+            color: $accent-color-dark !important;
 
             &:hover {
-                color: $accent-color;
+                color: $accent-color !important;
             }
         }
 
