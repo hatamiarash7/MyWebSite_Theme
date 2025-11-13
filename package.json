@@ -2,7 +2,7 @@
     "name": "theme",
     "description": "A clean, minimal theme for my website",
     "demo": "https://arash-hatami.ir",
-    "version": "5.6.0",
+    "version": "5.9.0",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -30,13 +30,16 @@
         ]
     },
     "keywords": [
-        "theme"
+        "ghost",
+        "theme",
+        "ghost-theme"
     ],
     "repository": {
         "type": "git",
         "url": "https://github.com/hatamiarash7/MyWebSite_Theme.git"
     },
     "bugs": "https://github.com/hatamiarash7/MyWebSite_Theme/issues",
+    "contributors": "https://github.com/hatamiarash7/MyWebSite_Theme/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
         "autoprefixer": "10.4.22",
@@ -53,7 +56,9 @@
         "postcss": "8.5.6",
         "postcss-color-mod-function": "4.1.1",
         "postcss-easy-import": "4.0.0",
-        "pump": "3.0.3"
+        "pump": "3.0.3",
+        "gulp-sass": "^6.0.0",
+        "sass": "^1.62.1"
     },
     "browserslist": [
         "defaults"
@@ -168,9 +173,5 @@
         "extends": [
             "@tryghost:theme"
         ]
-    },
-    "dependencies": {
-        "gulp-sass": "^6.0.0",
-        "sass": "^1.62.1"
     }
 }
