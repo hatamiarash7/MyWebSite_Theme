@@ -1,3 +1,18 @@
+{{!
+
+There are two error files in this theme, one for 404s and one for all other errors.
+This file is the latter, and handles all 400/500 errors that might occur.
+
+Because 500 errors in particular usually happen when a server is struggling, this
+template is as simple as possible. No template dependencies, no JS, no API calls.
+This is to prevent rendering the error-page itself compounding the issue causing
+the error in the first place.
+
+Keep this template as lightweight as you can!
+
+}}
+
+
 <html>
     <head>
         <meta charset="utf-8" />
@@ -13,17 +28,19 @@
     </head>
     <body>
         <div class="site-wrapper">
+
             <header class="site-header no-image">
                 <div class="site-nav-main outer">
                     <div class="inner">
                         <nav class="site-nav-center">
                             {{#if @site.logo}}
-                                <a class="site-nav-logo" href="{{@site.url}}">
-                                    <img
+                                <a
+                                    class="site-nav-logo"
+                                    href="{{@site.url}}"
+                                ><img
                                         src="{{img_url @site.logo size="xs"}}"
                                         alt="{{@site.title}}"
-                                    />
-                                </a>
+                                    /></a>
                             {{else}}
                                 <a
                                     class="site-nav-logo"
@@ -34,15 +51,17 @@
                     </div>
                 </div>
             </header>
+
             <main class="outer error-content">
                 <div class="inner">
+
                     <section class="error-message">
                         <h1 class="error-code">{{statusCode}}</h1>
                         <p class="error-description">{{message}}</p>
-                        <a class="error-link" href="{{@site.url}}">
-                            Go to the front page →
-                        </a>
+                        <a class="error-link" href="{{@site.url}}">Go to the
+                            front page →</a>
                     </section>
+
                     {{#if errorDetails}}
                         <section class="error-stack">
                             <h3>Theme errors</h3>
@@ -54,22 +73,19 @@
                                         >{{{rule}}}</em>
 
                                         {{#foreach failures}}
-                                            <p>
-                                                <span
+                                            <p><span
                                                     class="error-stack-file"
-                                                >Ref: {{ref}}</span>
-                                            </p>
-                                            <p>
-                                                <span
+                                                >Ref: {{ref}}</span></p>
+                                            <p><span
                                                     class="error-stack-file"
-                                                >Message: {{message}}</span>
-                                            </p>
+                                                >Message: {{message}}</span></p>
                                         {{/foreach}}
                                     </li>
                                 {{/foreach}}
                             </ul>
                         </section>
                     {{/if}}
+
                 </div>
             </main>
         </div>

@@ -1,4 +1,17 @@
 {{!< default}}
+
+{{!--
+
+There are two error files in this theme, one for 404s and one for all other errors.
+This file is the former, and handles all 404 Page Not Found errors.
+
+The 404 error is the most common error that a visitor might see, for example when
+following a broken link
+
+Keep this template as lightweight as you can!
+
+--}}
+
 <section class="outer error-content">
     <div class="inner">
         <section class="error-message">
@@ -8,6 +21,9 @@
         </section>
     </div>
 </section>
+
+{{!-- Given that people landing on this page didn't find what they
+were looking for, let's give them some alternative stuff to read. --}}
 <aside class="read-more-wrap outer">
     <div class="read-more inner">
         {{#get "posts" include="authors" limit="3" as |more_posts|}}
