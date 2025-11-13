@@ -16,13 +16,13 @@ jobs:
             - name: 📥 Install NodeJS
               uses: actions/setup-node@v6
               with:
-                  node-version: 24
+                  node-version: 22.21.1
 
             - name: 📥 Install dependencies
               run: yarn install
 
-            - name: 🔎 Pre-Test
-              run: yarn pretest
-
             - name: 🔎 Test
               run: yarn test:ci
+
+            - name: 🔎 Pre-Test
+              run: yarn pretest
