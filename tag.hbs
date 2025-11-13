@@ -1,11 +1,17 @@
 {{!< default}}
+{{!-- The tag above means - insert everything in this file into the {body} of the default.hbs template --}}
+
 <main id="site-main" class="site-main outer">
 <div class="inner posts">
     <div class="post-feed">
+
         {{#tag}}
         <section class="post-card post-card-large">
+
             {{#if feature_image}}
             <div class="post-card-image-link">
+                {{!-- This is a responsive image, it loads different sizes depending on device
+                https://medium.freecodecamp.org/a-guide-to-responsive-images-with-ready-to-use-templates-c400bd65c433 --}}
                 <img class="post-card-image"
                     srcset="{{img_url feature_image size="s"}} 300w,
                             {{img_url feature_image size="m"}} 600w,
@@ -17,6 +23,7 @@
                 />
             </div>
             {{/if}}
+
             <div class="post-card-content">
             <div class="post-card-content-link">
                 <header class="post-card-header">
@@ -26,17 +33,23 @@
                     {{#if description}}
                         {{description}}
                     {{else}}
-                        تعداد: {{plural ../pagination.total empty='بدون نوشته' singular='% post' plural='% نوشته'}}
+                        تعداد: {{plural ../pagination.total empty='بدون نوشته' singular='% نوشته' plural='% نوشته'}}
                     {{/if}}
                 </div>
             </div>
             </div>
+
         </section>
         {{/tag}}
+
         {{#foreach posts}}
+            {{!-- The tag below includes the markup for each post - partials/post-card.hbs --}}
             {{> "post-card"}}
         {{/foreach}}
+
     </div>
+
     {{pagination}}
+
 </div>
 </main>
