@@ -51,13 +51,12 @@ production stylesheet in assets/built/screen.css
      */
 
     /* Fonts */
-    --font-sans:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-        sans-serif;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+        "Helvetica Neue", sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
-    --font-rtl: Vazirmatn RD UI FD, sans-serif;
+    --font-rtl: vazirmatn UI FD, sans-serif;
 }
 
 /* 2. Layout - Page building blocks
@@ -500,13 +499,10 @@ production stylesheet in assets/built/screen.css
     text-align: left;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow:
-        0 0 0 1px rgba(0, 0, 0, 0.04),
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04),
         0 7px 20px -5px rgba(0, 0, 0, 0.15);
     transform: translate3d(0, 6px, 0);
-    transition:
-        opacity 0.3s,
-        transform 0.2s;
+    transition: opacity 0.3s, transform 0.2s;
 }
 
 .is-head-middle-logo .gh-dropdown {
@@ -806,9 +802,7 @@ production stylesheet in assets/built/screen.css
 
     .gh-head-open #gh-head .nav li {
         opacity: 1;
-        transition:
-            transform 0.2s,
-            opacity 0.2s;
+        transition: transform 0.2s, opacity 0.2s;
         transform: translateY(0);
     }
 
@@ -827,9 +821,7 @@ production stylesheet in assets/built/screen.css
 
     .gh-head-open #gh-head :is(.gh-head-button, .gh-head-link) {
         opacity: 1;
-        transition:
-            transform 0.4s,
-            opacity 0.4s;
+        transition: transform 0.4s, opacity 0.4s;
         transition-delay: 0.2s;
         transform: translateY(0);
     }
@@ -1481,9 +1473,7 @@ is the very first element in the post content */
     line-height: 1.5em;
     background: var(--color-darkgrey);
     border-radius: 5px;
-    box-shadow:
-        0 2px 6px -2px rgba(0, 0, 0, 0.1),
-        0 0 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.4);
 }
 
 @media (max-width: 650px) {
@@ -1655,8 +1645,7 @@ iframe.instagram-media + script + :not([id]) {
     white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
-    background:
-        radial-gradient(
+    background: radial-gradient(
                 ellipse at left,
                 rgba(0, 0, 0, 0.2) 0%,
                 rgba(0, 0, 0, 0) 75%
@@ -1669,9 +1658,7 @@ iframe.instagram-media + script + :not([id]) {
             )
             100% center;
     background-attachment: scroll, scroll;
-    background-size:
-        10px 100%,
-        10px 100%;
+    background-size: 10px 100%, 10px 100%;
     background-repeat: no-repeat;
 }
 
