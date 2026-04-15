@@ -20,6 +20,9 @@ const colorFunction = require("postcss-color-mod-function");
 const cssnano = require("cssnano");
 const easyimport = require("postcss-easy-import");
 
+// translations support
+const { mergeLocales } = require("@tryghost/theme-translations/build");
+
 const REPO = "hatamiarash7/MyWebSite_Theme";
 const REPO_READONLY = "hatamiarash7/MyWebSite_Theme";
 const CHANGELOG_PATH = path.join(process.cwd(), ".", "changelog.md");
@@ -41,7 +44,7 @@ const handleError = (done) => {
 function hbs(done) {
     pump(
         [src(["*.hbs", "partials/**/*.hbs"]), livereload()],
-        handleError(done)
+        handleError(done),
     );
 }
 
@@ -56,7 +59,7 @@ function scss(done) {
             dest("assets/built/", { sourcemaps: "." }),
             livereload(),
         ],
-        handleError(done)
+        handleError(done),
     );
 }
 
@@ -68,7 +71,7 @@ function css(done) {
             dest("assets/built/", { sourcemaps: "." }),
             livereload(),
         ],
-        handleError(done)
+        handleError(done),
     );
 }
 
@@ -81,14 +84,14 @@ function js(done) {
                     "assets/js/lib/*.js",
                     "assets/js/*.js",
                 ],
-                { sourcemaps: true }
+                { sourcemaps: true },
             ),
             concat("casper.js"),
             uglify(),
             dest("assets/built/", { sourcemaps: "." }),
             livereload(),
         ],
-        handleError(done)
+        handleError(done),
     );
 }
 
@@ -110,16 +113,30 @@ function zipper(done) {
             zip(filename),
             dest("dist/"),
         ],
-        handleError(done)
+        handleError(done),
     );
+}
+
+function locales(done) {
+    mergeLocales({
+        local: "./locales-local",
+        output: "./locales",
+    })(done);
 }
 
 const cssWatcher = () => watch("assets/css/**", css);
 const scssWatcher = () => watch("assets/css/*.scss", scss);
 const jsWatcher = () => watch("assets/js/**", js);
 const hbsWatcher = () => watch(["*.hbs", "partials/**/*.hbs"], hbs);
-const watcher = parallel(scssWatcher, cssWatcher, jsWatcher, hbsWatcher);
-const build = series(scss, css, js);
+const localesWatcher = () => watch("./locales-local/**/*.json", locales);
+const watcher = parallel(
+    scssWatcher,
+    cssWatcher,
+    jsWatcher,
+    hbsWatcher,
+    localesWatcher,
+);
+const build = series(scss, css, js, locales);
 
 exports.build = build;
 exports.zip = series(build, zipper);
@@ -142,18 +159,19 @@ exports.release = async () => {
 
     if (!githubToken) {
         console.log(
-            "Please configure your environment with a GitHub token located in GST_TOKEN"
+            "Please configure your environment with a GitHub token located in GST_TOKEN",
         );
         return;
     }
 
     try {
-        const result = await inquirer.prompt([
+        const prompt = inquirer.createPromptModule();
+        const result = await prompt([
             {
                 type: "input",
                 name: "compatibleWithGhost",
                 message: "Which version of Ghost is it compatible with?",
-                default: "5.0.0",
+                default: "6.0.0",
             },
         ]);
 
@@ -200,7 +218,7 @@ exports.release = async () => {
             changelogPath: CHANGELOG_PATH,
         });
         console.log(
-            `\nRelease draft generated: ${newReleaseResponse.releaseUrl}\n`
+            `\nRelease draft generated: ${newReleaseResponse.releaseUrl}\n`,
         );
     } catch (err) {
         console.error(err);

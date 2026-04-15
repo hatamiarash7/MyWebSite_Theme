@@ -52,9 +52,10 @@ production stylesheet in assets/built/screen.css
      */
 
     /* Fonts */
-    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
-        "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-        "Helvetica Neue", sans-serif;
+    --font-sans:
+        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+        "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+        sans-serif;
     --font-serif: Georgia, Times, serif;
     --font-mono: Menlo, Courier, monospace;
     --font-rtl: vazirmatn UI FD, sans-serif;
@@ -515,10 +516,13 @@ production stylesheet in assets/built/screen.css
     text-align: left;
     background-color: #fff;
     border-radius: 5px;
-    box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.04),
+    box-shadow:
+        0 0 0 1px rgba(0, 0, 0, 0.04),
         0 7px 20px -5px rgba(0, 0, 0, 0.15);
     transform: translate3d(0, 6px, 0);
-    transition: opacity 0.3s, transform 0.2s;
+    transition:
+        opacity 0.3s,
+        transform 0.2s;
 }
 
 .is-head-middle-logo .gh-dropdown {
@@ -818,7 +822,9 @@ production stylesheet in assets/built/screen.css
 
     .gh-head-open #gh-head .nav li {
         opacity: 1;
-        transition: transform 0.2s, opacity 0.2s;
+        transition:
+            transform 0.2s,
+            opacity 0.2s;
         transform: translateY(0);
     }
 
@@ -837,7 +843,9 @@ production stylesheet in assets/built/screen.css
 
     .gh-head-open #gh-head :is(.gh-head-button, .gh-head-link) {
         opacity: 1;
-        transition: transform 0.4s, opacity 0.4s;
+        transition:
+            transform 0.4s,
+            opacity 0.4s;
         transition-delay: 0.2s;
         transform: translateY(0);
     }
@@ -1551,7 +1559,9 @@ is the very first element in the post content */
     line-height: 1.5em;
     background: var(--color-darkgrey);
     border-radius: 5px;
-    box-shadow: 0 2px 6px -2px rgba(0, 0, 0, 0.1), 0 0 1px rgba(0, 0, 0, 0.4);
+    box-shadow:
+        0 2px 6px -2px rgba(0, 0, 0, 0.1),
+        0 0 1px rgba(0, 0, 0, 0.4);
 }
 
 .gh-content ol ol li {
@@ -1743,7 +1753,8 @@ iframe.instagram-media + script + :not([id]) {
     white-space: nowrap;
     vertical-align: top;
     -webkit-overflow-scrolling: touch;
-    background: radial-gradient(
+    background:
+        radial-gradient(
                 ellipse at left,
                 rgba(0, 0, 0, 0.2) 0%,
                 rgba(0, 0, 0, 0) 75%
@@ -1756,7 +1767,9 @@ iframe.instagram-media + script + :not([id]) {
             )
             100% center;
     background-attachment: scroll, scroll;
-    background-size: 10px 100%, 10px 100%;
+    background-size:
+        10px 100%,
+        10px 100%;
     background-repeat: no-repeat;
 }
 
@@ -1788,13 +1801,14 @@ iframe.instagram-media + script + :not([id]) {
     letter-spacing: 0.2px;
     text-align: left;
     text-transform: uppercase;
-    background-color: color-mod(var(--color-wash) l(+4%));
+    background-color: color-mod(var(--color-wash) lightness(97%));
 }
 
 .gh-content table:not(.gist table) th,
 .gh-content table:not(.gist table) td {
     padding: 6px 12px;
-    border: color-mod(var(--color-wash) l(-1%) s(-5%)) 1px solid;
+    border: color-mod(var(--color-wash) lightness(92%) saturation(39%)) 1px
+        solid;
 }
 
 /* 6.1. Post Byline
@@ -2264,7 +2278,7 @@ html.dark-mode
         .byline-meta-content,
         .pagination .page-number
     ) {
-    color: color-mod(var(--color-secondary-text) l(-22%));
+    color: var(--color-secondary-text);
 }
 
 html.dark-mode .post-card-featured {
@@ -2348,7 +2362,7 @@ html.dark-mode .gh-content code {
 }
 
 html.dark-mode hr {
-    border-top-color: color-mod(var(--color-darkmode) l(+8%));
+    border-top-color: #424242;
 }
 
 html.dark-mode .gh-content hr:after {
@@ -2378,12 +2392,12 @@ html.dark-mode .gh-content table:not(.gist table) td:last-child {
 
 html.dark-mode .gh-content table:not(.gist table) th {
     color: rgba(255, 255, 255, 0.85);
-    background-color: color-mod(var(--color-darkmode) l(+8%));
+    background-color: color-mod(var(--color-darkmode) lightness(17%));
 }
 
 html.dark-mode .gh-content table:not(.gist table) th,
 html.dark-mode .gh-content table:not(.gist table) td {
-    border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
+    border: color-mod(var(--color-darkmode) lightness(17%)) 1px solid;
 }
 
 html.dark-mode .gh-content :is(input, textarea) {
@@ -2473,7 +2487,7 @@ html.dark-mode .footer-cta-title {
             .byline-meta-content,
             .pagination .page-number
         ) {
-        color: color-mod(var(--color-secondary-text) l(-22%));
+        color: var(--color-secondary-text);
     }
 
     html.auto-color .post-card-featured {
@@ -2557,7 +2571,7 @@ html.dark-mode .footer-cta-title {
     }
 
     html.auto-color hr {
-        border-top-color: color-mod(var(--color-darkmode) l(+8%));
+        border-top-color: #424242;
     }
 
     html.auto-color .gh-content hr:after {
@@ -2587,12 +2601,12 @@ html.dark-mode .footer-cta-title {
 
     html.auto-color .gh-content table:not(.gist table) th {
         color: rgba(255, 255, 255, 0.85);
-        background-color: color-mod(var(--color-darkmode) l(+8%));
+        background-color: color-mod(var(--color-darkmode) lightness(17%));
     }
 
     html.auto-color .gh-content table:not(.gist table) th,
     html.auto-color .gh-content table:not(.gist table) td {
-        border: color-mod(var(--color-darkmode) l(+8%)) 1px solid;
+        border: color-mod(var(--color-darkmode) lightness(17%)) 1px solid;
     }
 
     html.auto-color .gh-content :is(input, textarea) {

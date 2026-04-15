@@ -5,23 +5,19 @@ function lightbox(trigger) {
         var items = [];
         var index = 0;
 
-        var prevSibling = e.target.closest(".kg-card").previousElementSibling;
+        var prevSibling = e.target.closest('.kg-card').previousElementSibling;
 
-        while (
-            prevSibling &&
-            (prevSibling.classList.contains("kg-image-card") ||
-                prevSibling.classList.contains("kg-gallery-card"))
-        ) {
+        while (prevSibling && (prevSibling.classList.contains('kg-image-card') || prevSibling.classList.contains('kg-gallery-card'))) {
             var prevItems = [];
 
-            prevSibling.querySelectorAll("img").forEach(function (item) {
+            prevSibling.querySelectorAll('img').forEach(function (item) {
                 prevItems.push({
-                    src: item.getAttribute("src"),
-                    msrc: item.getAttribute("src"),
-                    w: item.getAttribute("width"),
-                    h: item.getAttribute("height"),
+                    src: item.getAttribute('src'),
+                    msrc: item.getAttribute('src'),
+                    w: item.getAttribute('width'),
+                    h: item.getAttribute('height'),
                     el: item,
-                });
+                })
 
                 index += 1;
             });
@@ -30,57 +26,50 @@ function lightbox(trigger) {
             items = prevItems.concat(items);
         }
 
-        if (e.target.classList.contains("kg-image")) {
+        if (e.target.classList.contains('kg-image')) {
             items.push({
-                src: e.target.getAttribute("src"),
-                msrc: e.target.getAttribute("src"),
-                w: e.target.getAttribute("width"),
-                h: e.target.getAttribute("height"),
+                src: e.target.getAttribute('src'),
+                msrc: e.target.getAttribute('src'),
+                w: e.target.getAttribute('width'),
+                h: e.target.getAttribute('height'),
                 el: e.target,
             });
         } else {
             var reachedCurrentItem = false;
 
-            e.target
-                .closest(".kg-gallery-card")
-                .querySelectorAll("img")
-                .forEach(function (item) {
-                    items.push({
-                        src: item.getAttribute("src"),
-                        msrc: item.getAttribute("src"),
-                        w: item.getAttribute("width"),
-                        h: item.getAttribute("height"),
-                        el: item,
-                    });
-
-                    if (!reachedCurrentItem && item !== e.target) {
-                        index += 1;
-                    } else {
-                        reachedCurrentItem = true;
-                    }
-                });
-        }
-
-        var nextSibling = e.target.closest(".kg-card").nextElementSibling;
-
-        while (
-            nextSibling &&
-            (nextSibling.classList.contains("kg-image-card") ||
-                nextSibling.classList.contains("kg-gallery-card"))
-        ) {
-            nextSibling.querySelectorAll("img").forEach(function (item) {
+            e.target.closest('.kg-gallery-card').querySelectorAll('img').forEach(function (item) {
                 items.push({
-                    src: item.getAttribute("src"),
-                    msrc: item.getAttribute("src"),
-                    w: item.getAttribute("width"),
-                    h: item.getAttribute("height"),
+                    src: item.getAttribute('src'),
+                    msrc: item.getAttribute('src'),
+                    w: item.getAttribute('width'),
+                    h: item.getAttribute('height'),
                     el: item,
                 });
+
+                if (!reachedCurrentItem && item !== e.target) {
+                    index += 1;
+                } else {
+                    reachedCurrentItem = true;
+                }
+            });
+        }
+
+        var nextSibling = e.target.closest('.kg-card').nextElementSibling;
+
+        while (nextSibling && (nextSibling.classList.contains('kg-image-card') || nextSibling.classList.contains('kg-gallery-card'))) {
+            nextSibling.querySelectorAll('img').forEach(function (item) {
+                items.push({
+                    src: item.getAttribute('src'),
+                    msrc: item.getAttribute('src'),
+                    w: item.getAttribute('width'),
+                    h: item.getAttribute('height'),
+                    el: item,
+                })
             });
             nextSibling = nextSibling.nextElementSibling;
         }
 
-        var pswpElement = document.querySelectorAll(".pswp")[0];
+        var pswpElement = document.querySelectorAll('.pswp')[0];
 
         var options = {
             bgOpacity: 0.9,
@@ -90,27 +79,16 @@ function lightbox(trigger) {
             index: index,
             shareEl: false,
             zoomEl: false,
-            getThumbBoundsFn: function (index) {
+            getThumbBoundsFn: function(index) {
                 var thumbnail = items[index].el,
-                    pageYScroll =
-                        window.pageYOffset ||
-                        document.documentElement.scrollTop,
+                    pageYScroll = window.pageYOffset || document.documentElement.scrollTop,
                     rect = thumbnail.getBoundingClientRect();
 
-                return {
-                    x: rect.left,
-                    y: rect.top + pageYScroll,
-                    w: rect.width,
-                };
-            },
-        };
+                return {x:rect.left, y:rect.top + pageYScroll, w:rect.width};
+            }
+        }
 
-        var gallery = new PhotoSwipe(
-            pswpElement,
-            PhotoSwipeUI_Default,
-            items,
-            options
-        );
+        var gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
         gallery.init();
 
         return false;
@@ -118,7 +96,7 @@ function lightbox(trigger) {
 
     var triggers = document.querySelectorAll(trigger);
     triggers.forEach(function (trig) {
-        trig.addEventListener("click", function (e) {
+        trig.addEventListener('click', function (e) {
             onThumbnailsClick(e);
         });
     });
@@ -126,6 +104,6 @@ function lightbox(trigger) {
 
 (function () {
     lightbox(
-        ".kg-image-card > .kg-image[width][height], .kg-gallery-image > img"
+        '.kg-image-card > .kg-image[width][height], .kg-gallery-image > img'
     );
 })();

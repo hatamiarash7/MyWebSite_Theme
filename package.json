@@ -2,7 +2,7 @@
     "name": "theme",
     "description": "A clean, minimal theme for my website",
     "demo": "https://arash-hatami.ir",
-    "version": "5.9.0",
+    "version": "5.10.4",
     "engines": {
         "ghost": ">=5.0.0"
     },
@@ -42,6 +42,7 @@
     "contributors": "https://github.com/hatamiarash7/MyWebSite_Theme/graphs/contributors",
     "devDependencies": {
         "@tryghost/release-utils": "0.8.1",
+        "@tryghost/theme-translations": "~0.0.16",
         "autoprefixer": "10.5.0",
         "beeper": "2.1.0",
         "cssnano": "7.1.5",
@@ -171,7 +172,8 @@
     },
     "renovate": {
         "extends": [
-            "@tryghost:theme"
+            "@tryghost:theme",
+            "github>TryGhost/Themes:packages/theme-translations/renovate-config"
         ]
     }
 }
