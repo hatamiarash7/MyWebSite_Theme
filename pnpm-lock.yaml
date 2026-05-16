@@ -13,7 +13,7 @@ importers:
         version: 0.8.1
       '@tryghost/theme-translations':
         specifier: ~0.0.16
-        version: 0.0.16
+        version: 0.0.18
       autoprefixer:
         specifier: 10.5.0
         version: 10.5.0(postcss@8.5.14)
@@ -1398,8 +1398,8 @@ packages:
   '@tryghost/server@2.2.1':
     resolution: {integrity: sha512-WY7YGd+PIIuX5IaZnNV2X3tMNBpAX4fHpEj887ZWRPReUvxoVj6ODOTQnNCN7UlCoNmDS88KrfLUDA4IQCDEmA==}
 
-  '@tryghost/theme-translations@0.0.16':
-    resolution: {integrity: sha512-1KQBJfpSjzK+0JPOhtIVmwjRqYo/auFFNC+oqyOGDsI10JIznYzhS2JP6eQutBWgCFEoLaHF3fBrNbrx0UD0ag==}
+  '@tryghost/theme-translations@0.0.18':
+    resolution: {integrity: sha512-R9aAcaJAlFoeZxgrMST5AT0GJW7priDUCw5a4SwGFNDpjEgEN636oypYN2rQ1eF95IO2fwkNfd+SFZRFhaH7hg==}
 
   '@tryghost/tpl@2.2.0':
     resolution: {integrity: sha512-6OFCFHNzJxbZ0HXiLIAKJz5OkT6cdZId19m6UZ2+xN8oBg14iZwhoHoBWCzKNDrFN53t3N5JHM3oa/WtoB+BKw==}
@@ -5380,7 +5380,7 @@ snapshots:
       - '@75lb/nature'
       - supports-color
 
-  '@tryghost/theme-translations@0.0.16': {}
+  '@tryghost/theme-translations@0.0.18': {}
 
   '@tryghost/tpl@2.2.0': {}
 
