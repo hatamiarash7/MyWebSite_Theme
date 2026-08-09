@@ -1,0 +1,8 @@
+User-agent: *
+Content-Signal: ai-train=yes, search=yes, ai-input=yes
+Sitemap: https://arash-hatami.ir/sitemap.xml
+Disallow: /ghost/
+Disallow: /email/
+Disallow: /members/api/comments/counts/
+Disallow: /r/
+Disallow: /webmentions/receive/
