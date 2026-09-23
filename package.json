@@ -41,7 +41,7 @@
     "bugs": "https://github.com/hatamiarash7/MyWebSite_Theme/issues",
     "contributors": "https://github.com/hatamiarash7/MyWebSite_Theme/graphs/contributors",
     "devDependencies": {
-        "@tryghost/release-utils": "0.9.2",
+        "@tryghost/release-utils": "0.9.3",
         "@tryghost/theme-translations": "~0.0.16",
         "autoprefixer": "10.6.1",
         "beeper": "2.1.0",
