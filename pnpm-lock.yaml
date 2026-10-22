@@ -48,8 +48,8 @@ importers:
         specifier: 6.1.0
         version: 6.1.0(gulp@5.0.1)
       inquirer:
-        specifier: 14.2.3
-        version: 14.2.3(@types/node@26.6.5)
+        specifier: 14.2.4
+        version: 14.2.4(@types/node@26.6.5)
       postcss:
         specifier: 8.5.31
         version: 8.5.31
@@ -1863,8 +1863,8 @@ packages:
   ini@1.3.8:
     resolution: {integrity: sha512-JV/yugV2uzW5iMRSiZAyDtQd+nxtUnjeLt0acNdw98kKLrvuRVyB80tsREOE7yvGVgalhZ6RNXCmEHkUKBKxew==}
 
-  inquirer@14.2.3:
-    resolution: {integrity: sha512-eKUcE0H/iewXjEPNvIDXYp6xcgFPyUdk3My/HWQgL8WF7jLCJEdQUsQ+5WvXQs8Fj4iH3mJCzLX1JbsoJSliUw==}
+  inquirer@14.2.4:
+    resolution: {integrity: sha512-xPVejWqfkjG9OxSirMqu3pdzGIGsma68j2S+nEOuuwMbU3pRTHnYs9d8my+1M6OMlqr8XZPwCPonZ2DKMwQDLg==}
     engines: {node: '>=23.5.0 || ^22.13.0 || ^20.17.0'}
     peerDependencies:
       '@types/node': '>=18'
@@ -4560,7 +4560,7 @@ snapshots:
 
   ini@1.3.8: {}
 
-  inquirer@14.2.3(@types/node@26.6.5):
+  inquirer@14.2.4(@types/node@26.6.5):
     dependencies:
       '@inquirer/ansi': 2.0.9
       '@inquirer/core': 12.0.5(@types/node@26.6.5)
