@@ -3,7 +3,7 @@ strictDepBuilds: true
 blockExoticSubdeps: true
 
 allowBuilds:
-    # Optional dtrace bindings for bunyan (a gscan dependency); not needed to build/test the theme.
+    '@parcel/watcher': true
     dtrace-provider: false
 
 pnpmfile: []
@@ -13,3 +13,5 @@ overrides:
     "minimatch@>=7 <11.0.1": 11.0.5
     # Keep the legacy release-utils error dependency on a patched CommonJS uuid.
     "@tryghost/errors@1>uuid": 14.0.3
+minimumReleaseAgeExclude:
+  - postcss@8.5.33
