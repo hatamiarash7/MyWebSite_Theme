@@ -2,21 +2,25 @@
     "name": "theme",
     "description": "A clean, minimal theme for my website",
     "demo": "https://arash-hatami.ir",
-    "version": "5.10.4",
+    "version": "5.12.5",
     "engines": {
-        "ghost": ">=5.0.0"
+        "ghost": ">=5.0.0",
+        "node": ">=22.12.0"
     },
     "license": "MIT",
     "scripts": {
         "dev": "gulp",
         "zip": "gulp zip",
+        "build": "gulp build",
         "test": "gscan .",
         "test:ci": "gscan --fatal --verbose .",
-        "pretest": "gulp build",
-        "preship": "yarn test",
-        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then yarn version && git push --follow-tags; else echo \"Uncommitted changes found.\" && exit 1; fi",
+        "pretest": "pnpm zip",
+        "pretest:ci": "pnpm zip",
+        "preship": "pnpm test",
+        "ship": "STATUS=$(git status --porcelain); echo $STATUS; if [ -z \"$STATUS\" ]; then git push --follow-tags; else echo \"Uncommitted changes found.\" && exit 1; fi",
         "postship": "git fetch && gulp release"
     },
+    "packageManager": "pnpm@12.21.0",
     "author": {
         "name": "Arash Hatami",
         "email": "hatamiarash7@gmail.com",
@@ -169,11 +173,5 @@
                 "group": "post"
             }
         }
-    },
-    "renovate": {
-        "extends": [
-            "@tryghost:theme",
-            "github>TryGhost/Themes:packages/theme-translations/renovate-config"
-        ]
     }
 }
