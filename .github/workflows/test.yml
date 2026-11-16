@@ -1,28 +1,39 @@
-name: ✅ Tests
+name: Test
 
 on:
-    push:
-        branches: [master]
+    pull_request:
+
+permissions:
+    contents: read
 
 jobs:
-    build:
-        name: ✅ Test
+    test:
+        name: Test
         runs-on: ubuntu-latest
 
         steps:
-            - name: ⬇️ Checkout project
-              uses: actions/checkout@v7
-
-            - name: 📥 Install NodeJS
-              uses: actions/setup-node@v7
+            - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
               with:
-                  node-version: 26.13.0
+                  persist-credentials: false
 
-            - name: 📥 Install dependencies
-              run: yarn install
+            - uses: pnpm/action-setup@0e279bb959325dab635dd2c09392533439d90093
 
-            - name: 🔎 Test
-              run: yarn test:ci
+            - uses: actions/setup-node@48b55a011bda9f5d6aeb4c2d9c7362e8dae4041e
+              with:
+                  node-version: lts/*
+                  cache: pnpm
+                  cache-dependency-path: pnpm-lock.yaml
 
-            - name: 🔎 Pre-Test
-              run: yarn pretest
+            - run: pnpm install --frozen-lockfile
+
+            - run: pnpm test:ci
+
+    required-checks-pass:
+        name: Required checks pass
+        if: always()
+        needs: [test]
+        runs-on: ubuntu-latest
+        steps:
+            - name: Verify all required jobs succeeded
+              if: contains(needs.*.result, 'failure') || contains(needs.*.result, 'cancelled')
+              run: exit 1

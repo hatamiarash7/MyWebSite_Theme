@@ -9,16 +9,16 @@
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    {{!-- Preload scripts --}}
+    {{!-- Preload critical resources to reduce render-blocking --}}
     <link rel="preload" as="style" href="{{asset "built/screen.css"}}" />
     <link rel="preload" as="style" href="{{asset "built/custom.css"}}" />
     <link rel="preload" as="script" href="{{asset "built/casper.js"}}" />
 
     {{!-- Theme assets - use the {asset} helper to reference styles & scripts,
     this will take care of caching and cache-busting automatically --}}
-    <link rel="stylesheet" type="text/css" href="{{asset "built/screen.css"}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset "built/custom.css"}}" />
-    <link href="https://lib.arvancloud.ir/vazir-font/33.003/UI-Farsi-Digits/Vazirmatn-UI-FD-font-face.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" href="{{asset "built/screen.css"}}" />
+    <link rel="stylesheet" href="{{asset "built/custom.css"}}" />
+    <link rel="stylesheet" href="https://lib.arvancloud.ir/vazir-font/33.003/UI-Farsi-Digits/Vazirmatn-UI-FD-font-face.css" />
 
     {{!-- This tag outputs all your advanced SEO meta, structured data, and other important settings,
     it should always be the last tag before the closing head tag --}}
@@ -84,9 +84,21 @@
     <footer class="site-footer outer">
         <div class="inner">
             <section class="copyright"><a href="{{@site.url}}">{{@site.title}}</a> &copy; {{date format="YYYY"}}</section>
-            <nav class="site-footer-nav">
-                {{navigation type="secondary"}}
-            </nav>
+            <div class="site-footer-center">
+                <div class="site-footer-social-links">
+                    {{#social_accounts @site}}
+                        <a href="{{href}}" target="_blank" rel="noopener" aria-label="{{name}}">
+                            {{#> (concat "icons/" type)}}
+                                {{!-- Fallback rendered when no per-platform icon partial exists --}}
+                                <span>{{name}}</span>
+                            {{/undefined}}
+                        </a>
+                    {{/social_accounts}}
+                </div>
+                <nav class="site-footer-nav">
+                    {{navigation type="secondary"}}
+                </nav>
+            </div>
         </div>
     </footer>
 
@@ -97,22 +109,8 @@
     {{> "lightbox"}}
 {{/is}}
 
-{{!-- Scripts - handle member signups, responsive videos, infinite scroll, floating headers, and galleries --}}
-<script
-    src="https://lib.arvancloud.ir/jquery/3.6.3/jquery.min.js"
-    crossorigin="anonymous">
-</script>
-<script src="{{asset "built/casper.js"}}"></script>
-<script>
-$(document).ready(function () {
-    // Mobile Menu Trigger
-    $('.gh-burger').click(function () {
-        $('body').toggleClass('gh-head-open');
-    });
-    // FitVids - Makes video embeds responsive
-    $(".gh-content").fitVids();
-});
-</script>
+{{!-- Scripts - handle responsive videos, infinite scroll, floating headers, and galleries --}}
+<script src="{{asset "built/casper.js"}}" defer></script>
 
 {{!-- Ghost outputs required functional scripts with this tag - it should always be the last thing before the closing body tag --}}
 {{ghost_foot}}
